@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  client:
+    container_name: compoxport-client-dev
+    build:
+      context: ./apps/compoxport-client
+      dockerfile: Dockerfile-client-dev
+    ports:
+      - '4200:4200'
+    volumes:
+      - ./apps/compoxport-client:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_INTERVAL=1000
+      - NG_CLI_ANALYTICS=false
+    stdin_open: true
+    tty: true
+    command: npm run start --poll=2000 --watch
+
+  server:
+    container_name: compoxport-server-dev
+    build:
+      context: ./apps/compoxport-server
+      dockerfile: Dockerfile-server-dev
+    ports:
+      - '3001:3001'
+    volumes:
+      - ./apps/compoxport-server:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    stdin_open: true
+    tty: true

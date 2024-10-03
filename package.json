@@ -1,0 +1,19 @@
+{
+	"name": "compoxport-monorepo",
+	"private": true,
+	"workspaces": [
+		"apps/compoxport-client",
+		"apps/compoxport-server"
+	],
+	"scripts": {
+		"dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+		"dev:client": "npm --prefix apps/compoxport-client run start",
+		"dev:server": "npm --prefix apps/compoxport-server run start:dev",
+		"docker:dev": "docker-compose -f docker-compose.dev.yml up --build -d",
+		"docker:prod": "docker-compose -f docker-compose.prod.yml up --build -d",
+		"docker:down": "docker-compose -f docker-compose.dev.yml down --remove-orphans && docker-compose -f docker-compose.prod.yml down --remove-orphans"
+	},
+	"dependencies": {
+		"concurrently": "^9.0.1"
+	}
+}

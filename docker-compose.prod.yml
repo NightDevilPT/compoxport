@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  client:
+    build:
+      context: ./apps/compoxport-client
+      dockerfile: ./Dockerfile-client-prod
+    ports:
+      - '80:80'
+    environment:
+      - NODE_ENV=production
+
+  server:
+    build:
+      context: ./apps/compoxport-server
+      dockerfile: ./Dockerfile-server-prod
+    ports:
+      - '3001:3001'
+    environment:
+      - NODE_ENV=production

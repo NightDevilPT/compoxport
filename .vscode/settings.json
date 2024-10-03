@@ -1,0 +1,15 @@
+{
+	"vsicons.presets.angular": true,
+	"editor.tabSize": 4,
+	"editor.insertSpaces": true,
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.format.defaultFormatter.options": {
+		"tabWidth": 4,
+		"useEditorConfig": true
+	},
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": true
+	},
+	"vsicons.presets.nestjs": true
+}

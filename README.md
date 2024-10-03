@@ -1,5 +1,5 @@
 <pre>
-/root-folder
+/compoxport
 |-- /apps
 |   |-- /compoxport-client        # Angular app
 |   |   |-- package.json          # Angular package.json

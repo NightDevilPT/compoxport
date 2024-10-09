@@ -22,5 +22,5 @@
 |-- .dockerignore                 # Docker ignore file
 |-- .env                          # Environment file for development
 |-- .env.prod                     # Environment file for production
-
 </pre>
+<img src="./assets/db-design.png" alt="Your Image Description" style="width:100%;height:auto;" />
